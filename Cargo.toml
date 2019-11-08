@@ -1,0 +1,43 @@
+[package]
+authors = ["Brad Gibson <brad@humanenginuity.com>"]
+categories = []
+edition = "2018"
+keywords = []
+license = "MIT or Apache-2.0"
+name = "k210_pac"
+readme = "README.md"
+repository = "https://github.com/u007d/k210_pac"
+version = "1.0.0"
+
+[dependencies]
+snafu = "*"
+bare-metal = "0.2.5"
+riscv = "0.5.4"
+riscv-rt = "0.6.1"
+vcell = "0.1.2"
+
+[profile.dev]
+codegen-units = 1
+debug = true
+debug-assertions = true
+lto = false
+opt-level = 0
+panic = "unwind"
+rpath = false
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+lto = true
+opt-level = 3
+panic = "unwind"
+rpath = false
+
+[profile.test]
+codegen-units = 1
+debug = true
+debug-assertions = true
+lto = false
+opt-level = 0
+rpath = false
